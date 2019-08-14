@@ -5,3 +5,8 @@
 @tailwind utilities;
 
 /* Your custom CSS here */
+
+.App {
+    background-image: url("./images/background.png");
+    background-size: cover;
+}

@@ -274,7 +274,7 @@ textarea {
 }
 
 /**
- * Correct the cursor style of increment and decrement buttons in Chrome.
+ * Correct the cursor style of increment and decrement Buttons in Chrome.
  */
 
 [type="number"]::-webkit-inner-spin-button,
@@ -8350,6 +8350,11 @@ video {
 }
 
 /* Your custom CSS here */
+
+.App {
+  background-image: url("./images/background.png");
+  background-size: cover;
+}
 
 @media (min-width: 640px) {
   .sm\:sr-only {

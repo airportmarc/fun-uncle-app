@@ -1,25 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {MainNavigation} from "./Components/Nav";
+import ButtonBody from "./Components/ButtonBody";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          <div className="text-green-900">This is more te</div>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App min-h-screen px-5 ">
+      <MainNavigation/>
+      <h1 className="pt-24">Welcome, Its Friday afternoon, what are you in the mood for?</h1>
+      <ButtonBody/>
     </div>
   );
 }
