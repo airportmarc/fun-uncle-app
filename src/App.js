@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {MainNavigation} from "./Components/Nav";
-import ButtonBody from "./Components/ButtonBody";
+import {ButtonBody} from "./Components/ButtonBody";
 
 function App() {
   return (

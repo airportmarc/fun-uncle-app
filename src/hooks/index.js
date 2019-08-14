@@ -1,16 +1,19 @@
 import React, { useState, useEffect }  from 'react'
-import axios from 'axios';
+import {SpotifyApi,} from "../Api/Spotify";
 
-const useFetch = url => {
-  const [data, setData] = useState(null);
+
+const Api = new SpotifyApi()
+
+export const useSpotify = (item, params = {}) => {
+  const [data, setData] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    const [item] = data.results;
-    setData(item);
+    const res = await Api[item]({...params});
+    const data = await res.data
+    console.log("raw", data)
+    setData(data);
     setLoading(false);
   }, []);
 
