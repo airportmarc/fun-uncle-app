@@ -1,11 +1,10 @@
 import React, { useState, useEffect }  from 'react'
 import CategoryButton from "../Buttons/category.button";
 import axios from 'axios'
-import {Client, TrackHandler, PlaylistHandler} from 'spotify-sdk';
-
-axios.defaults.headers.common['Authorization'] = 'Bearer ' // for all requests
+import {SpotifyApi, TestApi} from "../../Api/Spotify";
 
 
+const api = new TestApi()
 export default class ButtonBody extends React.Component {
 
   constructor(props) {
@@ -16,16 +15,18 @@ export default class ButtonBody extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://api.spotify.com/v1/browse/categories?country=CA&limit=10').then(resp => {
+    // SpotifyApi.getCategoryList().then(resp => {
+    //   this.setState({data: resp.data.categories.items.sort(() => .5 - Math.random()).slice(0,5)})
+    // }) /
+     api.getCatList().then(resp => {
       this.setState({data: resp.data.categories.items.sort(() => .5 - Math.random()).slice(0,5)})
     })
   }
 
   showPlaylist(categoryId) {
-    const url = `https://api.spotify.com/v1/browse/categories/${categoryId}/playlists?country=ca&limit=10`
-    axios.get(url).then(resp => {
+    SpotifyApi.getPlaylistFromCategory(categoryId.then(resp => {
       this.setState({data: resp.data.playlists.items.sort(() => .5 - Math.random()).slice(0,5)})
-    })
+    }))
   }
 
   showTracks(playlistId) {
