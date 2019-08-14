@@ -4,8 +4,8 @@ import {useSpotify} from "../../hooks";
 
 
 export function ButtonBody(props) {
-  const {data, loading} = useSpotify('getCategoryList')
-  const { items } = data ? data.categories : {}
+  // const {data, loading} = useSpotify('getCategoryList')
+  // const { items } = data ? data.categories : {}
 
   // showPlaylist(categoryId) {
   //   Api.getPlaylistFromCategory(categoryId.then(resp => {
@@ -19,13 +19,15 @@ export function ButtonBody(props) {
   //   })
   // }
   return (
+    <div>HI
 
-        <div className="flex flex-1 flex-wrap w-full">
-        {items && items.map(item => {
-          return <CategoryButton key={item.id}  item={item} />
-        })}
+      {/*  <div className="flex flex-1 flex-wrap w-full">*/}
+      {/*  {items && items.map(item => {*/}
+      {/*    return <CategoryButton key={item.id}  item={item} />*/}
+      {/*  })}*/}
 
-      </div>
+      {/*</div>*/}
+    </div>
 
   )
 }
