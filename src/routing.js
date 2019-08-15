@@ -2,8 +2,10 @@ import React from 'react'
 import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
 import App from './App'
 import {MainNavigation} from "./Components/Nav";
-import useLocalStorage from 'react-use-localstorage';
-
+import {ReceiveToken} from "./Components/Auth/receivetoken.auth";
+import {CategorySection} from "./Components/Sections/category.section";
+import {PlaylistSection} from "./Components/Sections/playlist.section";
+import {TrackListSection} from "./Components/Sections/tracklist.section";
 
 
 function PrivateRoute({component: Component, authed, ...rest}) {
@@ -19,9 +21,9 @@ function PrivateRoute({component: Component, authed, ...rest}) {
 }
 
 export function Routing() {
-  const [item, setItem] = useLocalStorage('token', false);
-  const authItem = (JSON.parse(item))
-  console.log(`TOKEN ${authItem.auth}`)
+  let token = window.localStorage.getItem('token') || '{"auth": "false"}'
+  token = JSON.parse(token)
+
 
   return (
     <Router>
@@ -29,9 +31,10 @@ export function Routing() {
         <MainNavigation/>
         <div>
           <Route path="/" component={App}/>
-          <PrivateRoute authed={authItem.auth} path="/categories" component={App}/>
-          <PrivateRoute authed={authItem.auth} path="/playlists/:catId" component={App}/>
-          <PrivateRoute authed={authItem.auth} path="/tracklist/:playlistId" component={App}/>
+          <Route path="/redirect" component={ReceiveToken}/>
+          <PrivateRoute authed={token.auth} path="/categories" component={CategorySection}/>
+          <PrivateRoute authed={token.auth} path="/playlists/:catId" component={PlaylistSection}/>
+          <PrivateRoute authed={token.auth} path="/tracklist/:playlistId" component={TrackListSection}/>
 
         </div>
       </div>
