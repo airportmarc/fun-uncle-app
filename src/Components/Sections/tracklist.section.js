@@ -10,12 +10,15 @@ export function TrackListSection(props) {
     props.history.push(`/tracklist/${id}`)
   }
 
+  const isHeat = !items || items.reduce((prev, current) => (prev.track.popularity > current.track.popularity) ? prev : current)
+
   return (
-        <div className="flex flex-1 flex-wrap w-full">
-        {items && items.map(item => {
+        <div className="flex flex-col  w-full">
+        {items && items.map((item, idx) => {
           return (
           <TracklistButton
-            key={item.id}
+            isHeat={isHeat ? isHeat.track.id === item.track.id : false}
+            key={idx}
             item={item}
             handleClick={handleClick}
           />
