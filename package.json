@@ -24,9 +24,7 @@
     "start:app": "npm run watch:css & react-scripts start",
     "deploy": "yarn build:css && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start:server": "netlify-lambda serve functions",
-    "build:functions": "netlify-lambda build functions"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
