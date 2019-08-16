@@ -10,7 +10,7 @@ export function TracklistButton(props) {
   const {artists, album, duration_ms, name, uri} = track
   return (
     <div
-      className="flex h-12 items-center hover:bg-blue-100"
+      className="flex h-12 items-center hover:text-white"
       onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}
     >
@@ -22,8 +22,8 @@ export function TracklistButton(props) {
       <div className="w-1/4 self-start"> {mouseOver &&
       <div className="flex justify-around w-1/6 items-center">
         <IoIosCheckmark
-          style={{color: favoriteTrack === track.id ? 'green' : 'inherit'}}
-          className="h-10 w-10 text-gray-100 hover:text-green-100" onClick={() => setFavoriteTrack(track.id)}/>
+          style={{color: favoriteTrack === track.id ? '#b83280' : 'inherit'}}
+          className="h-10 w-10" onClick={() =>   setFavoriteTrack(favoriteTrack === track.id ? null : track.id) }/>
         <IoIosPlay className="h-8 w-6 text-gray-100" onClick={() => window.open(uri)}/>
       </div>}
       </div>
