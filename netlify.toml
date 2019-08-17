@@ -3,3 +3,8 @@
   command = "yarn deploy"
   # This is the directory is publishing to netlify's CDN
   publish = "build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
