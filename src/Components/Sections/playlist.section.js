@@ -1,6 +1,8 @@
 import React  from 'react'
 import {useSpotify} from "../../hooks";
 import {PlaylistButton} from "../Buttons/playlist.button";
+import {BaseClass} from "./base.section";
+import {CategoryButton} from "../Buttons/category.button";
 
 
 export function PlaylistSection(props) {
@@ -11,17 +13,5 @@ export function PlaylistSection(props) {
     props.history.push(`/tracklist/${id}`)
   }
 
-  return (
-        <div className="flex flex-1 flex-wrap w-full">
-        {items && items.map(item => {
-          return (
-          <PlaylistButton
-            key={item.id}
-            item={item}
-            handleClick={handleClick}
-          />
-          )
-        })}
-        </div>
-  )
+  return <BaseClass items={items} component={PlaylistButton} onClick={handleClick} />
 }

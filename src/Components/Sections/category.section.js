@@ -1,6 +1,7 @@
 import React  from 'react'
 import { CategoryButton } from "../Buttons/category.button";
 import {useSpotify} from "../../hooks";
+import {BaseClass} from "./base.section";
 
 
 export function CategorySection(props) {
@@ -10,18 +11,8 @@ export function CategorySection(props) {
   const handleClick = (catId) => {
     props.history.push(`/playlists/${catId}`)
   }
-
   return (
-        <div className="flex flex-1 flex-wrap w-full">
-        {items && items.map(item => {
-          return (
-          <CategoryButton
-            key={item.id}
-            item={item}
-            onClick={handleClick}
-          />
-          )
-        })}
-        </div>
+    <BaseClass items={items} component={CategoryButton} onClick={handleClick} />
+
   )
 }

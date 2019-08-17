@@ -13,7 +13,11 @@ I wanted to combine a few of these things in the project, as they were on my lis
 to explore and thought this was a good a time as any.
 
 A few notes:
-- This is actually my first react project from scracth.  All other projects have been Vue, or an already created react project.  So, i kept the folder structure generally as I found it.
+- This is actually my first react project from scracth.  All other projects have been Vue, or an already created react
+ project.  So, i kept the folder structure generally as I found it.
+ - Commit history.  Is not the cleanest.  I was making the project up kinda on the fly, so commits were not as clean
+ and 'story' like as I would have hoped.  
+ 
 
 
 Functionality:

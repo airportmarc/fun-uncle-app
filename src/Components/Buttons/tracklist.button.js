@@ -10,7 +10,7 @@ export function TracklistButton(props) {
   const {artists, album, duration_ms, name, uri} = track
   return (
     <div
-      className="flex h-12 items-center hover:text-white"
+      className={`flex h-12 items-center hover:text-white `}
       onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}
     >
