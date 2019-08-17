@@ -18,7 +18,7 @@ export const MainNavigation = (props) => {
       <div>About</div>
       <div>Partner</div>
       <div>Other</div>
-      <div onClick={doLogout}>Logout</div>
+      <div className="cursor-pointer" onClick={doLogout}>Logout</div>
     </div>
 
   </header>)

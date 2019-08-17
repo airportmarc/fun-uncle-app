@@ -13,7 +13,7 @@ export function TrackListSection(props) {
   const isHeat = !items || items.reduce((prev, current) => (prev.track.popularity > current.track.popularity) ? prev : current)
 
   return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-2/3">
         {items && items.map((item, idx) => {
           return (
           <TracklistButton
