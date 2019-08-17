@@ -14,8 +14,8 @@ to explore and thought this was a good a time as any.
 
 A few notes:
 - This is actually my first react project from scracth.  All other projects have been Vue, or an already created react
- project.  So, i kept the folder structure generally as I found it.
- - Commit history.  Is not the cleanest.  I was making the project up kinda on the fly, so commits were not as clean
+ project.  So, I kept the folder structure generally as I found it.
+ - Commit history.  Its not the cleanest.  I was making the project up kinda on the fly, so commits were not as clean
  and 'story' like as I would have hoped.  
  
 
@@ -23,10 +23,10 @@ A few notes:
 Functionality:
 - You will need a spotify account to login, then once logged in it will show random list of 5 catorgories.
 - Click any one, which will bring you to a list of 5 playlists within that catorgoy.
-- Click the playlist, to obtain a list of 10 songs from that playlist. 
+- Click the playlist, to obtain a list of 10 songs from that playlist.  (or click open to open the playlist in the web player)
 - You will notice a fire emjoi.  This is placed next to the song with the highest popularity rating within the list
 - Also a check mark.  This is clickable (Nothing fancy happens, just 'saves' the song)
-- Clicking the play button should open spotify, and play the song. 
+- Clicking the play button should open spotify, to the song. 
 
 There are a few little hacks in here, for both time reasons, and because not using a global store. But I added little comments where
 
